@@ -15,7 +15,7 @@ function onSubmitBtnClick(event) {
 
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, delay)
-      .then((position, delay) => {
+      .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
         );
