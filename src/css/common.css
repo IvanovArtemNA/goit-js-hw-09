@@ -16,3 +16,34 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* timer */
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #3f4458;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: default;
+}
+
+.value {
+  padding: 1px 10px;
+
+  font-size: 100px;
+  color: #fff;
+  border-radius: 70%;
+
+  transition: background-color 0.5s ease;
+}
+
+.value:hover {
+  background-color: #80cbc4;
+  border: transparent;
+}
+
+.label {
+  color: #fff;
+}
