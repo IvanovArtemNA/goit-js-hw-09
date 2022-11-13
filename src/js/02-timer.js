@@ -24,13 +24,13 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
 
-  onClose(dates) {
-    if (dates[0] <= date) {
+  onClose(selectdDates) {
+    if (selectdDates[0] <= date) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
       Notiflix.Notify.success('Push Start to countdown');
 
-      date = dates[0];
+      date = selectdDates[0];
       startTimerBtnEl.removeAttribute('disabled');
     }
   },
@@ -45,7 +45,7 @@ function onTimerBtnEl() {
     timingEl.setAttribute('disabled', '');
     stopTimer(reversing);
 
-    const converted = convertation(reversing);
+    const converted = convertMs(reversing);
     updateTimer(converted);
   }, period);
 }
@@ -57,7 +57,7 @@ function stopTimer(reversing) {
   }
 }
 
-function convertation(ms) {
+function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
